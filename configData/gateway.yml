@@ -10,18 +10,15 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: msscustomer
-          uri: lb://api-customer
+        - id: movie-service
+          uri: lb://api-movie
           predicates:
-            - Path=/customers/**
-        - id: msswallet
-          uri: lb://api-wallet
+            - Path=/api/v1/movies/**
+        - id: movie-service
+          uri: lb://api-catalog
           predicates:
-            - Path=/wallet/**
-        - id: mssmargins
-          uri: lb://api-margins
-          predicates:
-            - Path=/calculate/**
+            - Path=/api/v1/catalog/**
+
 
 info:
   app:
