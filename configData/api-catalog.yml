@@ -14,10 +14,18 @@ spring:
   mongodb:
     embedded:
       version: 4.0.2
-  data:
-    mongodb:
-      database: catalog-dev
-      port: 27018
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/baseback
+    username: root
+    password: Wire2681
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+#  data:
+#    mongodb:
+#      database: catalog-dev
+#      port: 27018
       #host: localhost
 info:
   application:
