@@ -4,6 +4,7 @@ spring:
   application:
     name: api-serie
 
+
   rabbitmq:
     username: guest
     password: guest
