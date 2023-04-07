@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: api-serie
+    name: api-series
   rabbitmq:
     username: guest
     password: guest
@@ -18,12 +18,12 @@ spring:
       version: 4.0.2
   data:
     mongodb:
-      database: catalog-dev
-      port: 27018
+      database: series-dev
+      port: 27017
       #host: localhost
 info:
   application:
-    name: api-serie
+    name: api-series
 eureka:
   instance:
     hostname: localhost
