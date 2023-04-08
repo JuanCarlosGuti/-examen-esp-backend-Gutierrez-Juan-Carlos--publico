@@ -11,13 +11,27 @@ spring:
     port: 5672
   zipkin:
     baseUrl: http://localhost:9411/
-  mongodb:
-    embedded:
-      version: 4.0.2
-  data:
-    mongodb:
-      database: series-dev
-      port: 27017
+  datasource:
+
+    #    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/movie-dev
+    #    username: usr-movie
+    #    password: pwd-movie
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/baseback
+    username: root
+    password: Wire2681
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+
+ # mongodb:
+#    embedded:
+#      version: 4.0.2
+#  data:
+#    mongodb:
+#      database: series-dev
+#      port: 27017
       #host: localhost
 info:
   application:
