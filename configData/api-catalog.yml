@@ -22,7 +22,7 @@ spring:
   data:
     mongodb:
       database: catalog-dev
-      port: 27017
+      port: 27018
 info:
   application:
     name: api-catalog
