@@ -23,7 +23,6 @@ info:
   application:
     name: api-catalog
 
-
 eureka:
   instance:
     hostname: localhost
@@ -36,22 +35,20 @@ eureka:
 
 resilience4j:
   retry:
-    config:
+    configs:
       default:
         max-retry-attempts: 3
-        wait-duration: 10s
-        retry-exception:
-          - java.net.SocketTimeoutException
-          - org.springframework.web.client.HttpServerErrorException
+        wait-duration: 1s
+        retry-exceptions:
           - java.io.IOException
+          - java.net.SocketTimeoutException
       instances:
         retryInscription:
           base-config: default
           max-retry-attempts: 5
           wait-duration: 2s
-          retry-exception:
-            -java.net.ConnectException
-
+          retry-exceptions:
+            - java.net.ConnectException
   circuitbreaker:
     configs:
       default:
@@ -60,12 +57,13 @@ resilience4j:
         minimum-number-of-calls: 5
         permitted-number-of-calls-in-half-open-state: 3
         wait-duration-in-open-state: 30s
-        automatic-transition-from-open-half-open-enabled: true
+        automatic-transition-from-open-to-half-open-enabled: true
         failure-rate-threshold: 50
     instances:
-      clientInscription:
+      showCatalog:
         base-config: default
         sliding-window-type: COUNT_BASED
         sliding-window-size: 5
         wait-duration-in-open-state: 1m
-        failure-rate-threshold: 50
+        failure-rate-threshold: 40
+
