@@ -24,6 +24,7 @@ spring:
 info:
   application:
     name: api-catalog
+
 eureka:
   instance:
     hostname: localhost
