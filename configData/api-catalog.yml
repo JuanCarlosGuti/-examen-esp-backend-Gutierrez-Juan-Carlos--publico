@@ -1,20 +1,17 @@
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: ${PORT:0}
 
 spring:
   application:
     name: api-catalog
-
   rabbitmq:
     username: guest
     password: guest
     host: localhost
     port: 5672
 
-
   zipkin:
     baseUrl: http://localhost:9411/
-
 
   mongodb:
     embedded:
@@ -22,11 +19,11 @@ spring:
   data:
     mongodb:
       database: catalog-dev
-      port: 27018
+      port: 27017
+
 info:
   application:
     name: api-catalog
-
 eureka:
   instance:
     hostname: localhost
@@ -36,6 +33,7 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
 
 resilience4j:
   retry:
