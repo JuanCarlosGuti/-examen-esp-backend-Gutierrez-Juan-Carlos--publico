@@ -18,9 +18,9 @@ spring:
 #    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/movie-dev
 #    username: usr-movie
 #    password: pwd-movie
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/baseback
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/movie-dev
     username: root
-    password: Wire2681
+    password: password
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
