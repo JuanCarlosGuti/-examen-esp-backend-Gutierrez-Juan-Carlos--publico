@@ -19,8 +19,6 @@ spring:
   data:
     mongodb:
       database: series-dev
-      username: usr
-      password: pwd
       port: 27017
 
 info:
