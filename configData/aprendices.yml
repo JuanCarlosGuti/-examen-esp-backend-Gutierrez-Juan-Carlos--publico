@@ -17,11 +17,6 @@ info:
   application:
     name: aprendices
 
-
-
-info:
-  application:
-    name: api-serie
 eureka:
   instance:
     hostname: localhost
